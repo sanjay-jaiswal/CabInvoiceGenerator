@@ -8,7 +8,7 @@ namespace CabInvoiceGenerator
     {
         private int numberOfRides;
         private double totalFare;
-        private double averageFare;
+        public double averageFare { get; set; }
 
         /// <summary>
         /// Creating constructor and initializing new instance of the InvoiceSummary class.
@@ -19,7 +19,20 @@ namespace CabInvoiceGenerator
         {
             this.numberOfRides = numberOfRides;
             this.totalFare = totalFare;
-            this.averageFare = this.totalFare / this.numberOfRides;
+        }
+
+        /// <summary>
+        /// Creating constructor and initializing new instance of the InvoiceSummary class.
+        /// Parameterised constructor With different parameters
+        /// </summary>
+        /// <param name="numberOfRides"></param>
+        /// <param name="totalFare"></param>
+        /// <param name="avrageFare"></param>
+        public InvoiceSummary(int numberOfRides, double totalFare, double avrageFare)
+        {
+            this.numberOfRides = numberOfRides;
+            this.totalFare = totalFare;
+            this.averageFare = averageFare;
         }
 
         /// <summary>
