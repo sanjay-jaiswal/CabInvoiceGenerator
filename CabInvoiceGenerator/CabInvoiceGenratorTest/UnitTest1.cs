@@ -40,5 +40,23 @@ namespace CabInvoiceGenratorTest
             InvoiceSummary expectedSummary = new InvoiceSummary(2, 30.0, 15);
             Assert.AreEqual(expectedSummary, invoiceSummary);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [Test]
+        public void GivenMultipleRides_WhenUserId_thenShouldReturnFollowingInvoiceSummary()
+        {
+            invoiceGenerator = new InvoiceGenerator(RideType.NORMAL);
+            Ride[] rides = { new Ride(2.0, 5), new Ride(0.1, 1) };
+            RideRepository rideRepository = new RideRepository();
+            string userId = "Sanju";
+            rideRepository.AddRides(userId, rides);
+            Ride[] rideData = rideRepository.GetRides(userId);
+            InvoiceSummary invoiceSummary = invoiceGenerator.CalculateAvrageFare(rideData);
+            InvoiceSummary expectedSummary = new InvoiceSummary(2, 30.0, 15);
+            Assert.AreEqual(expectedSummary, invoiceSummary);
+
+        }
     }
 }
