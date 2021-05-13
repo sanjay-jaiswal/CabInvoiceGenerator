@@ -28,7 +28,7 @@ namespace CabInvoiceGenerator
         /// <param name="numberOfRides"></param>
         /// <param name="totalFare"></param>
         /// <param name="avrageFare"></param>
-        public InvoiceSummary(int numberOfRides, double totalFare, double avrageFare)
+        public InvoiceSummary(int numberOfRides, double totalFare, double averageFare)
         {
             this.numberOfRides = numberOfRides;
             this.totalFare = totalFare;
